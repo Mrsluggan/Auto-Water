@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="https://www.thymeleaf.org/">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" th:src="@{script.js}" defer></script>
+
+</head>
+
+<body>
+
+    <h1>Här kan du se våra plantor</h1>
+    <ul th:each="plant : ${plants}">
+        <li><span th:text="${plant.name}"></span>
+            <span th:text="${plant.value}"></span>
+        </li>
+    </ul>
+</body>
+
+</html>

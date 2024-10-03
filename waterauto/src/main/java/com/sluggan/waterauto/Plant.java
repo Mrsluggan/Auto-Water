@@ -11,8 +11,17 @@ public class Plant {
     private String name;
     private int value;
 
+    public Plant() {
+
+    }
+
     public Plant(String id, String name, int value) {
         this.id = id;
+        this.name = name;
+        this.value = value;
+    }
+
+    public Plant(String name, int value) {
         this.name = name;
         this.value = value;
     }
