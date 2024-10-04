@@ -4,38 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Våra Plantor</title>
     <script type="text/javascript" th:src="@{script.js}" defer></script>
     <link rel="stylesheet" th:href="@{/style.css}" />
+    <style>
+   
+    </style>
 </head>
 
 <body>
 
     <h1>Här kan du se våra plantor</h1>
-    <div id="app" style="width: 60%;">
+    <div id="app">
         <div>
-            <h2>Tempratur <span th:text="${temp[0].value}"></span> C</h2>
-            <h2>Fuktighet <span th:text="${moist[0].value}"></span> %</h2>
-
+            <h2>Temperatur: <span th:text="${temp[0].value}"></span> °C</h2>
+            <h2>Fuktighet: <span th:text="${moist[0].value}"></span> %</h2>
         </div>
-        <hr style="width: 100%; border: 1px solid white;" />
 
-        <ul style="display: grid; grid-template-columns: repeat(2, 1fr); margin: 0; padding: 0;">
-            <li th:each="plant : ${plants}"
-                style="list-style: none; padding: 10px; text-align: center; border: 1px solid white;">
+        <hr />
+
+        <ul>
+            <li th:each="plant : ${plants}">
                 <div th:switch="${plant.value}">
                     <h2 th:text="${plant.name}"></h2>
                     <p th:case="0"><span th:text="${plant.name}"></span> behöver inte vattnas</p>
                     <p th:case="1"><span th:text="${plant.name}"></span> behöver vattnas</p>
-                    <p th:case="0"><span th:text="${plant.name}"></span> har försvunnit ?</p>
-
+                    <p th:case="2"><span th:text="${plant.name}"></span> har försvunnit?</p>
                 </div>
-
-
-
             </li>
         </ul>
     </div>
+
 </body>
 
 </html>
