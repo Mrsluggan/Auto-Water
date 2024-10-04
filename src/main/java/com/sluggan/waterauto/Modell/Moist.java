@@ -1,28 +1,24 @@
-package com.sluggan.waterauto;
+package com.sluggan.waterauto.Modell;
+
+import java.util.Date;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "plants")
-public class Plant {
+@Document(collection = "Moist")
+public class Moist {
 
     @Id
     private String id;
-    private String name;
+    private Date date;
     private int value;
 
-    public Plant() {
+    public Moist() {
 
     }
 
-    public Plant(String id, String name, int value) {
-        this.id = id;
-        this.name = name;
-        this.value = value;
-    }
-
-    public Plant(String name, int value) {
-        this.name = name;
+    public Moist(Date date, int value) {
+        this.date = date;
         this.value = value;
     }
 
@@ -34,12 +30,12 @@ public class Plant {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public Date getDate() {
+        return date;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setDate(Date date) {
+        this.date = date;
     }
 
     public int getValue() {

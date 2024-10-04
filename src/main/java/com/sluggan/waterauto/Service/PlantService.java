@@ -1,9 +1,11 @@
-package com.sluggan.waterauto;
+package com.sluggan.waterauto.Service;
 
 import java.util.List;
 import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
+
+import com.sluggan.waterauto.Modell.Plant;
 
 @Service
 public class PlantService {

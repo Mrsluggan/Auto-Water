@@ -1,10 +1,12 @@
-package com.sluggan.waterauto;
+package com.sluggan.waterauto.Controller;
 
 import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
+
+import com.sluggan.waterauto.Modell.Plant;
+import com.sluggan.waterauto.Service.PlantService;
 
 @Controller
 public class PlantController {
