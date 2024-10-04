@@ -1,3 +1,6 @@
 
+setInterval(function () {
+    window.location.reload();
+    console.log("fuck");
 
-console.log("fuck");
+}, 180000);

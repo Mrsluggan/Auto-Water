@@ -26,11 +26,11 @@ public class TempService {
         return plant;
     }
 
-    public List<Temp> getAllPlants() {
+    public List<Temp> getAllTemps() {
         return mongoOperations.findAll(Temp.class);
     }
 
-    public Temp getPlantsById(String id) {
+    public Temp getTempsById(String id) {
         return mongoOperations.findById(id, Temp.class);
     }
 }

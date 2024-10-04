@@ -26,11 +26,11 @@ public class MoistService {
         return plant;
     }
 
-    public List<Moist> getAllPlants() {
+    public List<Moist> getAllMoist() {
         return mongoOperations.findAll(Moist.class);
     }
 
-    public Moist getPlantsById(String id) {
+    public Moist getMoistById(String id) {
         return mongoOperations.findById(id, Moist.class);
     }
 }

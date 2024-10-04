@@ -14,19 +14,20 @@
     <h1>Här kan du se våra plantor</h1>
     <div id="app" style="width: 60%;">
         <div>
-            <h2>Tempratur</h2>
-            <h2>Fuktighet</h2>
+            <h2>Tempratur <span th:text="${temp[0].value}"></span> C</h2>
+            <h2>Fuktighet <span th:text="${moist[0].value}"></span> %</h2>
 
         </div>
-        <hr style="width: 100%; border: 1px solid white;"/>
-        
+        <hr style="width: 100%; border: 1px solid white;" />
+
         <ul style="display: grid; grid-template-columns: repeat(2, 1fr); margin: 0; padding: 0;">
-            <li th:each="plant : ${plants}" style="list-style: none; padding: 10px; text-align: center;">
+            <li th:each="plant : ${plants}"
+                style="list-style: none; padding: 10px; text-align: center; border: 1px solid white;">
                 <div th:switch="${plant.value}">
                     <h2 th:text="${plant.name}"></h2>
-                    <p th:case="0">Plantan behöver inte vattnas</p>
-                    <p th:case="1">Plantan behöver vattnas</p>
-                    <p th:case="0">Plantan har försvunnit ?</p>
+                    <p th:case="0"><span th:text="${plant.name}"></span> behöver inte vattnas</p>
+                    <p th:case="1"><span th:text="${plant.name}"></span> behöver vattnas</p>
+                    <p th:case="0"><span th:text="${plant.name}"></span> har försvunnit ?</p>
 
                 </div>
 
