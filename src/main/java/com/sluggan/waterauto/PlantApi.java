@@ -15,7 +15,7 @@ public class PlantApi {
     }
 
     @PostMapping("/plant")
-    public void addPlant(@RequestBody Map<String, Integer> plantData) {
+    public String addPlant(@RequestBody Map<String, Integer> plantData) {
         System.out.println("Nu har vi en planta: " + plantData);
         plantService.deleteAll();
         for (String key : plantData.keySet()) {
@@ -26,6 +26,7 @@ public class PlantApi {
         }
 
         System.out.println("Nu hände det något");
+        return "ok";
     }
 
     @PostMapping("/temp")
