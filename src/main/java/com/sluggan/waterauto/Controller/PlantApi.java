@@ -45,10 +45,9 @@ public class PlantApi {
     @PostMapping("/temp")
     public String addTemp(@RequestBody Map<String, Integer> tempData) {
         System.out.println("Nu har vi en planta: " + tempData);
-        plantService.deleteAll();
         for (String key : tempData.keySet()) {
             String typeOfData = key;
-            int value = tempData.get(key);
+            float value = tempData.get(key);
             if (typeOfData.equals("fuktighet")) {
                 moistService.addData(new Moist(new Date(), value));
             } else if (typeOfData.equals("tempratur")) {
