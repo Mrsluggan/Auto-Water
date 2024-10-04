@@ -11,13 +11,13 @@ public class Temp {
     @Id
     private String id;
     private Date date;
-    private int value;
+    private float value;
 
     public Temp() {
 
     }
 
-    public Temp(Date date, int value) {
+    public Temp(Date date, float value) {
         this.date = date;
         this.value = value;
     }
@@ -38,11 +38,11 @@ public class Temp {
         this.date = date;
     }
 
-    public int getValue() {
+    public float getValue() {
         return value;
     }
 
-    public void setValue(int value) {
+    public void setValue(float value) {
         this.value = value;
     }
 
