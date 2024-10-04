@@ -6,17 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script type="text/javascript" th:src="@{script.js}" defer></script>
-
+    <link rel="stylesheet" th:href="@{/style.css}" />
 </head>
 
 <body>
 
     <h1>Här kan du se våra plantor</h1>
-    <ul th:each="plant : ${plants}">
-        <li><span th:text="${plant.name}"></span>
-            <span th:text="${plant.value}"></span>
-        </li>
-    </ul>
+    <div id="app" style="width: 60%;">
+        <div>
+            <h2>Tempratur</h2>
+            <h2>Fuktighet</h2>
+
+        </div>
+        <hr style="width: 100%; border: 1px solid white;"/>
+        
+        <ul style="display: grid; grid-template-columns: repeat(2, 1fr); margin: 0; padding: 0;">
+            <li th:each="plant : ${plants}" style="list-style: none; padding: 10px; text-align: center;">
+                <div th:switch="${plant.value}">
+                    <h2 th:text="${plant.name}"></h2>
+                    <p th:case="0">Plantan behöver inte vattnas</p>
+                    <p th:case="1">Plantan behöver vattnas</p>
+                    <p th:case="0">Plantan har försvunnit ?</p>
+
+                </div>
+
+
+
+            </li>
+        </ul>
+    </div>
 </body>
 
 </html>
