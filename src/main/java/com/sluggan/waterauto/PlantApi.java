@@ -27,4 +27,17 @@ public class PlantApi {
 
         System.out.println("Nu hände det något");
     }
+
+    @PostMapping("/temp")
+    public void addTemp(@RequestBody Map<String, Integer> tempData) {
+        System.out.println("Nu har vi en planta: " + tempData);
+        plantService.deleteAll();
+        for (String key : tempData.keySet()) {
+            String plantName = key;
+            int value = tempData.get(key);
+            System.out.println("Tempratur: " + plantName + ", fuktighet: " + value);
+        }
+
+        System.out.println("Nu hände det något");
+    }
 }
