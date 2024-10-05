@@ -8,7 +8,7 @@
     <script type="text/javascript" th:src="@{script.js}" defer></script>
     <link rel="stylesheet" th:href="@{/style.css}" />
     <style>
-   
+
     </style>
 </head>
 
@@ -20,7 +20,7 @@
             <h2>Temperatur: <span th:text="${temp[0].value}"></span> °C</h2>
             <h2>Fuktighet: <span th:text="${moist[0].value}"></span> %</h2>
         </div>
-
+        <button>Ändra Plantor</button>
         <hr />
 
         <ul>
@@ -34,6 +34,7 @@
             </li>
         </ul>
     </div>
+
 
 </body>
 

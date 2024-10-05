@@ -21,7 +21,14 @@ public class PlantService {
     }
 
     public Plant addData(Plant plant) {
-        
+
+        mongoOperations.save(plant);
+        return plant;
+    }
+
+    public Plant updateData(String plantId,int value) {
+        Plant plant = getPlantsById(plantId);
+        plant.setValue(value);
         mongoOperations.save(plant);
         return plant;
     }

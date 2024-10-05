@@ -63,13 +63,36 @@ p {
     margin: 10px 0;
 }
 
+button {
+    background-color: #ecf0f1;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+    transform: translateY(2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
 @media (prefers-color-scheme: dark) {
     body {
         background-color: #1c1c1e;
         color: #f1f1f1;
     }
 
-    h1, h2 {
+    button {
+        background-color: #3a3a3c;
+        color: #f1f1f1;
+    }
+
+    h1,
+    h2 {
         color: #f8f8f8;
     }
 

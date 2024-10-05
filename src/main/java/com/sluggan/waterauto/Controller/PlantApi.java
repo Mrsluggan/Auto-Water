@@ -31,15 +31,29 @@ public class PlantApi {
     public String addPlant(@RequestBody Map<String, Integer> plantData) {
         System.out.println("Nu har vi en planta: " + plantData);
         plantService.deleteAll();
+        int id = 1;
+
         for (String key : plantData.keySet()) {
-            String plantName = key;
+            String plantNr = key;
             int value = plantData.get(key);
-            System.out.println("Plantan: " + plantName + ", Värde: " + value);
-            plantService.addData(new Plant(plantName, value));
+            plantService.addData(new Plant(String.valueOf(id), plantNr, value));
+            System.out.println("nu har planta lags till");
+            id += 1;
+            System.out.println(id);
         }
 
-        System.out.println("Nu hände det något");
         return "ok";
+    }
+
+    @PostMapping("/updateplant")
+    public String updatePlant(@RequestBody Map<String, Integer> plantData) {
+        for (String key : plantData.keySet()) {
+            String plantNr = key.replaceAll("\\D+", "");
+            int value = plantData.get(key);
+            plantService.updateData(plantNr, value);
+        }
+
+        return "update went okeeeeeeey";
     }
 
     @PostMapping("/temp")
