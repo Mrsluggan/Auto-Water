@@ -51,6 +51,8 @@ public class PlantApi {
             String plantNr = key.replaceAll("\\D+", "");
             int value = plantData.get(key);
             plantService.updateData(plantNr, value);
+            System.out.println(plantNr);
+            //plantService.updateData(plantNr, value);
         }
 
         return "update went okeeeeeeey";
