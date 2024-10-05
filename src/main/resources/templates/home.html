@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Våra Plantor</title>
     <script type="text/javascript" th:src="@{script.js}" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+    </script>
     <link rel="stylesheet" th:href="@{/style.css}" />
     <style>
 
@@ -20,6 +22,10 @@
             <h2>Temperatur: <span th:text="${temp[0].value}"></span> °C</h2>
             <h2>Fuktighet: <span th:text="${moist[0].value}"></span> %</h2>
         </div>
+        <div>
+            <canvas id="myChart" style="width:100%;"></canvas>
+        </div>
+
         <button>Ändra Plantor</button>
         <hr />
 
@@ -35,7 +41,68 @@
         </ul>
     </div>
 
+    <script th:inline="javascript">
+        // Använd th:utext för att korrekt injicera datan som en JavaScript-array
+        var moistData = /*[[${(moist)}]]*/[];
+        var moistDate = [];
+        var moistValue = [];
 
+        var tempDate = [];
+        var tempValue = [];
+        var tempData = /*[[${(temp)}]]*/[];
+
+        tempData.forEach(element => {
+            tempValue.push(element.value);
+        })
+        moistData.forEach(element => {
+            const month = element.date.substring(5, 7,); 
+            const day = element.date.substring(8, 10);
+            const time = element.date.substring(11,16); 
+
+            moistDate.push(month +" - "+ day + " " + time);
+        });
+        moistData.forEach(element => {
+            moistValue.push(element.value);
+        })
+
+
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'line',
+
+            data: {
+                labels: moistDate,
+                datasets: [{
+                    label: 'Temperatur',
+                    data: tempValue,
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    fill: false
+
+
+                }, {
+                    label: 'Fuktighet',
+                    data: moistValue,
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    fill: false
+                }]
+            },
+            options: {
+                elements: {
+                    line: {
+                        tension: 0
+                    }
+                },
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+
+    </script>
 </body>
 
 </html>
