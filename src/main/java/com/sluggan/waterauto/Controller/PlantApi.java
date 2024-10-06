@@ -59,7 +59,7 @@ public class PlantApi {
     }
 
     @PostMapping("/temp")
-    public String addTemp(@RequestBody Map<String, Integer> tempData) {
+    public String addTemp(@RequestBody Map<String, Float> tempData) {
         System.out.println("Nu har vi en planta: " + tempData);
         for (String key : tempData.keySet()) {
             String typeOfData = key;
