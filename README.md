@@ -46,7 +46,7 @@ This application is designed to make watering your plants much easier! No need t
         <li>
             <strong>Clone the Repository</strong><br>
             Open your terminal and run the following command to clone the repository:
-            <pre><code>git clone https://github.com/mrsluggan/autoWaterBackend</code></pre>
+            <pre><code>git clone https://github.com/mrsluggan/Auto-Water</code></pre>
         </li>
         <li>
             <strong>Create a <code>.env</code> File</strong><br>
@@ -87,7 +87,7 @@ todo
 
 
 
-> You can make this project better, please  feel free to open a [Pull Request](https://github.com/mrsluggan/autoWaterBackend/pulls).
+> You can make this project better, please  feel free to open a [Pull Request](https://github.com/mrsluggan/Auto-Water/pulls).
 - If you notice a bug or a typo use the tag **"Correction"**.
 - If you want to share any ideas to help make this project better, use the tag **"Enhancement"**.
 
