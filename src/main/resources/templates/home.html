@@ -19,8 +19,19 @@
     <h1>Här kan du se våra plantor</h1>
     <div id="app">
         <div>
-            <h2>Temperatur: <span th:text="${temp[0].value}"></span> °C</h2>
-            <h2>Fuktighet: <span th:text="${moist[0].value}"></span> %</h2>
+            <div th:if="${not #lists.isEmpty(temp)}">
+                <h2>Temperatur: <span th:text="${temp[0].value}"></span> °C</h2>
+            </div>
+            <div th:if="${not #lists.isEmpty(moist)}">
+                <h2>Fuktighet: <span th:text="${moist[0].value}"></span> %</h2>
+            </div>
+            <div th:if="${#lists.isEmpty(temp)}">
+                <h2>Temperatur: Ingen data hittades</h2>
+            </div>
+            <div th:if="${#lists.isEmpty(moist)}">
+                <h2>Fuktighet: Ingen data hittades</h2>
+            </div>
+
         </div>
         <div>
             <canvas id="myChart" style="width:100%;"></canvas>
