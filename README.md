@@ -72,10 +72,8 @@ This application is designed to make watering your plants much easier! No need t
 ## Demo
 
 Look at the amazing Demo video, displaying the power of this application
-<video width="320" height="240" controls>
-  <source src="https://github.com/user-attachments/assets/a89eec0b-09ab-4192-8388-4afba8bf714d" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+[Here is the video](https://github.com/user-attachments/assets/a89eec0b-09ab-4192-8388-4afba8bf714d)
+
 
 
 
